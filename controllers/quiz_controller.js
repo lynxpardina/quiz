@@ -1,6 +1,6 @@
 // GET /quizes/question
 exports.question = function(req, res){
-  res.render('quizes/question', {pregunta: 'Capital de Italia'});
+  res.render('quizes/question', {title: 'Quiz', pregunta: 'Capital de Italia'});
 }
 
 
@@ -13,8 +13,8 @@ exports.answer = function(req, res) {
             // busca roma con o sin espacios al principio y al final
             // ignorando las mayusculas y con $ comprueba que roma
             // no forme parte de una palabra
-    res.render('quizes/answer', {respuesta: 'Correcto'});
+    res.render('quizes/answer', {title: 'Quiz', respuesta: 'Correcto'});
   }else {
-    res.render('quizes/answer', {respuesta: 'Incorrecto'});
+    res.render('quizes/answer', {title: 'Quiz', respuesta: 'Incorrecto'});
   }
 };
