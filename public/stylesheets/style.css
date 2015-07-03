@@ -7,7 +7,20 @@ body                 { font: 16px Georgia, serif; }
 
 section > div        { padding: 20px; }
 header, nav, section { background: #eee; text-align: center;}
-footer               { background: #eee; text-align: center;}
 nav span             { margin: 0px 10px 0px 0px;
   					   width: 100%;
   					   display: inline-block;}
+
+footer              { background: #eee; text-align: center;}
+footer ul           { list-style: none;
+					  margin: 0;
+					  padding: 0;
+					  width: 100%;
+					  float: center;
+					}
+footer li 			{ 
+						display: inline;
+					}
+a:hover 			{
+					    color: green;
+					}
