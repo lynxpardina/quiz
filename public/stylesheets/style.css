@@ -23,3 +23,5 @@ figcaption 			{ display: block;
 					  font-style:italic;
 					  text-align: center;
 					}
+table               { margin:0 auto;
+					}
