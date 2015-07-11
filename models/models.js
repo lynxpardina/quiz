@@ -39,6 +39,12 @@ sequelize.sync().then(function(){
 			Quiz.create({pregunta: 'Capital de Italia', 
 						 respuesta: 'Roma'
 			});
+			Quiz.create({pregunta: '¿En que año descubrió Colón América?', 
+						 respuesta: '1492'
+			});
+			Quiz.create({pregunta: 'Autor del "El ingenioso hidalgo don Quijote de la Mancha"', 
+						 respuesta: 'Miguel de Cervantes'
+			});
 			Quiz.create({pregunta: 'Capital de Portugal', 
 						 respuesta: 'Lisboa'
 			})

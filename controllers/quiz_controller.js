@@ -12,13 +12,23 @@ exports.load = function(req, res, next, quizId){
 	).catch(function(error) { next(error);});
 };
 
-//GET /quizes
+//GET /quizes   gestiona y búsqueda y presentación de preguntas         
 exports.index = function(req, res){
-	models.Quiz.findAll().then (function(quizes){
-		res.render('quizes/index.ejs', {quizes: quizes});
-	}
-	).catch(function(error) {next(error);})
+	if (req.query.search) {
+	 	  var consulta = ('%' + req.query.search + '%').replace(/ /g,'%');
+    	  models.Quiz.findAll({ where: ["pregunta like ?", consulta],
+  		  					 	order: [['pregunta', 'ASC']]}
+    	  ).then(function(quizes) {
+    			res.render('quizes/index.ejs', {quizes: quizes});
+  		  }).catch(function(error) {next(error);});
+	  }else{
+      models.Quiz.findAll().then(function(quizes) {
+        res.render('quizes/index.ejs', { quizes: quizes});
+        }
+      ).catch(function(error){ next(error); })
+	  }
 };
+
 
 // GET /quizes/:id
 exports.show = function(req, res){
