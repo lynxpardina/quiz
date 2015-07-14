@@ -4,7 +4,7 @@ var quizController = require('../controllers/quiz_controller');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Bienvenido a Quiz' });
+  res.render('index', { title: 'Bienvenido a Quiz' , errors: []});
 });
 
 // Autoload de comandos con :quizId
@@ -12,7 +12,7 @@ router.param('quizId', quizController.load);  //autoload :quizId
 
 // GET author 
 router.get('/author', function(req, res) {
-  res.render('author', { title: 'Autor' });
+  res.render('author', { title: 'Autor' , errors: []});
 });
 
 // Definición de rutas de quizes
