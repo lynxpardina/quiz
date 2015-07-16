@@ -17,8 +17,11 @@ exports.index = function(req, res){
   var consulta = req.query.search || "";
   var consulta_tema = req.query.search_tema || "";
   
-  var consulta = ('%' + consulta.toLowerCase() + '%').replace(/ /g,'%');
-  var consulta_tema = ('%' + consulta_tema.toLowerCase() + '%').replace(/ /g,'%');
+//  consulta = ('%' + consulta.toLowerCase() + '%').replace(/ /g,'%');
+//  consulta_tema = ('%' + consulta_tema.toLowerCase() + '%').replace(/ /g,'%');
+
+  consulta = ('%' + consulta + '%').replace(/ /g,'%');
+  consulta_tema = ('%' + consulta_tema + '%').replace(/ /g,'%');  
 
 //    	models.Quiz.findAll({  where: 
 //                  ["LOWER(pregunta) like ?", consulta],
