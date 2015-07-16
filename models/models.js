@@ -1,5 +1,10 @@
 var path = require('path');
 
+var temas = ["Otro", "Humanidades", "Ocio", "Ciencia", "Tecnología"];
+
+exports.temas = temas;
+
+
 // Postgres DATABASE_URL = postgres://user:passwd@host:port/database
 // SQLite   DATABASE_URL = sqlite://:@:/
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/)
@@ -37,16 +42,32 @@ sequelize.sync().then(function(){
 	Quiz.count().then(function(count){
 		if(count === 0) {  //la tabla se inicializa solo si está vacia
 			Quiz.create({pregunta: 'Capital de Italia', 
-						 respuesta: 'Roma'
+						 respuesta: 'Roma', 
+						 tema: temas[1]
 			});
 			Quiz.create({pregunta: '¿En que año descubrió Colón América?', 
-						 respuesta: '1492'
+						 respuesta: '1492', 
+						 tema: temas[1]
 			});
-			Quiz.create({pregunta: 'Autor del "El ingenioso hidalgo don Quijote de la Mancha"', 
-						 respuesta: 'Miguel de Cervantes'
+			Quiz.create({pregunta: 'Autor del "El ingenioso hidalgo don Quijote de la Mancha', 
+						 respuesta: 'Miguel de Cervantes', 
+						 tema: temas[1]					 
+			});
+			Quiz.create({pregunta: 'IP de localhost', 
+						 respuesta: '127.0.0.1', 
+						 tema: temas[4]						 
+			});
+			Quiz.create({pregunta: '¿De que color es el caballo blanco de Santiago?', 
+						 respuesta: 'blanco', 
+						 tema: temas[2]
+			});
+			Quiz.create({pregunta: 'Nombre del satélite de la tierra', 
+						 respuesta: 'luna', 
+						 tema: temas[3]		 
 			});
 			Quiz.create({pregunta: 'Capital de Portugal', 
-						 respuesta: 'Lisboa'
+						 respuesta: 'Lisboa', 
+						 tema: temas[1]		 
 			})
 			.then(function(){console.log('Base de datos inicializada')});
 		};
