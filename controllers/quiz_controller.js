@@ -28,7 +28,7 @@ exports.index = function(req, res){
         models.Quiz.findAll({where: {
                     pregunta: {like: consulta},
                     tema: {like :consulta_tema}},
-                    order: 'pregunta ASC'}
+                    order:[["pregunta", "ASC"]]}
 
     	  ).then(function(quizes) {
     			res.render('quizes/index.ejs', {quizes: quizes, temas: models.temas, errors: []});
