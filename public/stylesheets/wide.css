@@ -1,5 +1,9 @@
 body { background: #ddd; }
 
+body             { font-size: medium; }
+input, button    { font-size: medium; }
+footer           { font-size: small; }
+
 #page-wrap:after { content: "Wide Layout"; }
 
 #page-wrap > .main   { border: 0px; padding: 1%; 

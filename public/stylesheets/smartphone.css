@@ -4,6 +4,7 @@ body             { background: #333; }
 
 h2 span, section h3, label.rem 
                  { display: none; }
+
 body             { font-size: xx-large; }
 input, button    { font-size: x-large; }
 footer           { font-size: large; }
