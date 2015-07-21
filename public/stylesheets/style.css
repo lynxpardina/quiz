@@ -1,6 +1,6 @@
 body 				{
-					width: 94%;
-					margin: 0 3% 0 3%;
+					width: 90%;
+					margin: 0 5% 0 5%;
 					font: Georgia, serif;
 					font-size: large;
 					line-height: 110%;
@@ -9,6 +9,9 @@ body 				{
 					/*display: block;*/
 					}
 
+h1{
+					display: block;
+}
 input, button   	 { font-size: large; }
 footer          	 { font-size: medium; }
 
@@ -50,5 +53,7 @@ figcaption 			{ display: block;
 					  text-align: center;
 					}
 table               { margin:0 auto;
+
 					}
+
 .right 			 	{float: right;}
