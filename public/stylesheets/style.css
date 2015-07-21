@@ -9,10 +9,7 @@ body 				{
 					/*display: block;*/
 					}
 
-h1{
-					display: block;
-}
-input, button, select{ font-size: small; }
+input, button, select{ font-size: medium; }
 footer          	 { font-size: small; }
 
 

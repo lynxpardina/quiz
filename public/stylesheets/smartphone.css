@@ -2,10 +2,4 @@ body             { background: #333; }
 
 #page-wrap:after { content: "Smartphone Layout"; color: white;}
 
-h2 span, section h3, label.rem 
-                 		 { display: none; }
-/*
-body            		 { font-size: x-large; }
-input, button, select    { font-size: large; }
-footer           		 { font-size: large; }
-*/
+h2 span, section h3, label.rem { display: none; }
