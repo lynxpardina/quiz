@@ -11,7 +11,6 @@ exports.show = function(req, res){
 models.Quiz.count()
  .then(function (numQuizes) { // número de preguntas
    stats.questions = numQuizes;
-   console.log("VARIABLE stats.questions - numQuizes: " + stats.questions +"-" +numQuizes);
     return models.Comment.count();
  }).then (function (commentNumber) {
     stats.comments = commentNumber;
