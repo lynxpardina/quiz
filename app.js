@@ -33,6 +33,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Helpers dinámicos:
+
 app.use(function(req, res, next){
     //guarda path en session.redir para después de login
     if (!req.path.match(/\/login|\/logout/)){
@@ -43,6 +44,27 @@ app.use(function(req, res, next){
     res.locals.session = req.session;
     next();
 });
+
+app.use(function(req, res, next){
+
+    var actualTime=Date.now();
+
+    if (req.session.user){
+       if ((actualTime -120000) > req.session.lastTime){
+//       if ((actualTime -10000) > req.session.lastTime){
+            req.session.lastTime=actualTime;
+            res.redirect('/logout');
+        }
+        else {
+            req.session.lastTime=actualTime;
+            next();
+        }
+    }
+    else {
+        next();
+    }
+});
+
 
 app.use('/', routes);
 // lo hemos borrado ... app.use('/users', users);
