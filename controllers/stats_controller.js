@@ -26,7 +26,11 @@ models.Quiz.count()
  }).then(function (quizes) { 
    stats.q_w_comments = quizes.count;
    stats.q_x_comments= stats.questions - quizes.count;
-   stats.avg_comments = (stats.questions/stats.comments).toFixed(1);
+   if (stats.comments===0){
+    stats.avg_comments = 0;
+  } else {
+    stats.avg_comments=(stats.questions/stats.comments).toFixed(1);
+  }
  }).finally(function () {
     res.render('quizes/statistics', {stats:stats, errors: []});
 });
